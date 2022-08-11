@@ -31,4 +31,26 @@ class BookController extends Controller
         $book = Book::find($id);
         return response()->json($book);
     }
+
+    public function update(Request $request, $id)
+    {
+        $book = Book::find($id);
+        
+        if (!$book) {
+            return response()->json(['message' => 'Data not found'], 404);
+        }
+        
+        $this->validate($request, [
+            "name" => "required|unique:book",
+            "price" => "required",
+            "status" => "required"
+        ]);
+
+        $data = $request->all();
+        $book->fill($data);
+        $book->save();
+
+        return response()->json($book);
+    }
+
 } 
