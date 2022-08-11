@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->post('/register','UserController@register');
+$router->post('/login','UserController@login');
 
 $router->get('/selamat', function () use ($router){
     return "selamat datang";
