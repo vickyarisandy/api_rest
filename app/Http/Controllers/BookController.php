@@ -7,6 +7,12 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create(Request $request)
     {
         // $data = $request->all();
