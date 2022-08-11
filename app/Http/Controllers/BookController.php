@@ -19,4 +19,10 @@ class BookController extends Controller
 
         return response()->json($book);
     }
+
+    public function index()
+    {
+        $book = Book::all();
+        return response()->json($book);
+    }
 } 
