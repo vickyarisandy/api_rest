@@ -25,3 +25,4 @@ $router->post('/book','BookController@create');
 $router->get('/book','BookController@index');
 $router->get('/book/{id}','BookController@show');   
 $router->put('/book/{id}','BookController@update');
+$router->delete('/book/{id}','BookController@destroy');
