@@ -26,6 +26,7 @@ $app = new Laravel\Lumen\Application(
 // $app->withFacades();
 
 // setelah install
+
  $app->withEloquent();
 
 /*
